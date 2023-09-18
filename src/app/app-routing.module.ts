@@ -1,20 +1,19 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { AddPhotoComponent } from './gallery/add-photo/add-photo.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'add-photo',
+    redirectTo: 'layout',
     pathMatch: 'full'
   },
   {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+    path: 'layout',
+    loadChildren: () => import('./layout/layout.module').then(m => m.LayoutPageModule)
   },
   {
-    path:'add-photo',
-    component:AddPhotoComponent
+    path: 'folder/:id',
+    loadChildren: () => import('./folder/folder.module').then(m => m.FolderPageModule)
   }
 
 ];
@@ -25,4 +24,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
