@@ -1,8 +1,8 @@
 <ion-app>
   <ion-split-pane contentId="main-content">
     <ion-menu contentId="main-content" type="overlay">
-      <ion-content>
-        <ion-list [inset]="true">
+      <ion-content class="menu_content">
+        <ion-list [inset]="false" class="theme_mode">
           <ion-item>
             <ion-toggle [(ngModel)]="themeToggle" (ionChange)="toggleChange($event)" justify="space-between">Dark
               Mode</ion-toggle>
@@ -11,9 +11,18 @@
 
         <ion-list id="inbox-list">
           <ion-menu-toggle auto-hide="false">
+            <ion-item routerDirection="root" routerLink="/layout/bar" lines="none" detail="false"
+              routerLinkActive="selected">
+              <ion-icon aria-hidden="true"  name="cash-outline" slot="start"></ion-icon>
+              <ion-label>
+                Bar
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false">
             <ion-item routerDirection="root" routerLink="/layout/geolocation" lines="none" detail="false"
               routerLinkActive="selected">
-              <ion-icon aria-hidden="true" slot="start"></ion-icon>
+              <ion-icon aria-hidden="true" slot="start" name="location-outline" ></ion-icon>
               <ion-label>
                 Geo Location
               </ion-label>
@@ -22,21 +31,13 @@
           <ion-menu-toggle auto-hide="false">
             <ion-item routerDirection="root" routerLink="/layout/gallery" lines="none" detail="false"
               routerLinkActive="selected">
-              <ion-icon aria-hidden="true" slot="start"></ion-icon>
+              <ion-icon aria-hidden="true" slot="start" name="images-outline" ></ion-icon>
               <ion-label>
                 Gallery
               </ion-label>
             </ion-item>
           </ion-menu-toggle>
-          <ion-menu-toggle auto-hide="false">
-            <ion-item routerDirection="root" routerLink="/layout/bar" lines="none" detail="false"
-              routerLinkActive="selected">
-              <ion-icon aria-hidden="true" slot="start"></ion-icon>
-              <ion-label>
-                Bar
-              </ion-label>
-            </ion-item>
-          </ion-menu-toggle>
+        
           <!-- <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
               <ion-icon aria-hidden="true" slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
