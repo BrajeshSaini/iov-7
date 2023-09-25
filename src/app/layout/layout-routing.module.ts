@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LayoutPage } from './layout.page';
 import { AddPhotoComponent } from '../gallery/add-photo/add-photo.component';
 import { GeolocationComponent } from '../geolocation/geolocation.component';
+import { BarComponent } from '../bar/bar.component';
 
 const routes: Routes = [
   {
@@ -11,12 +12,20 @@ const routes: Routes = [
     component: LayoutPage,
     children: [
       {
+        path: '',
+        component: GeolocationComponent
+      },
+      {
         path: 'gallery',
         component: AddPhotoComponent
       },
       {
         path: 'geolocation',
         component: GeolocationComponent
+      },      
+      {
+        path: 'bar',
+        component: BarComponent
       },
     ]
   }

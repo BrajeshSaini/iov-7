@@ -1,0 +1,58 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Bar</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+<!--
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Card Title</ion-card-title>
+      <ion-card-subtitle>{{progress}}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-progress-bar [value]="progress" (click)="setProgress($event)"></ion-progress-bar>
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <ion-progress-bar [value]="progressValue" (click)="progressBarClicked()"></ion-progress-bar>
+
+    </ion-card-content>
+  </ion-card>
+
+-->
+
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Progress Bar Working on Click</ion-card-title>
+      <ion-card-subtitle>{{selectedPrice}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="price-range" style="
+  position: relative;
+">
+        <input type="range" [(ngModel)]="selectedPrice" min="{{ minPrice }}" max="{{ maxPrice }}" step="1"
+          (input)="updatePrice(selectedPrice)" style="
+    opacity: 0;
+    width: 100%;
+    height:10px;
+  
+" />
+        <ion-progress-bar [value]="(selectedPrice - minPrice) / (maxPrice - minPrice)" style="
+    position: absolute;
+    top: 5px;
+    height: 10px;
+    z-index: -1;
+"></ion-progress-bar>
+      </div>
+      <p class="selected-price">
+        Selected Price: {{ selectedPrice }} USD
+      </p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

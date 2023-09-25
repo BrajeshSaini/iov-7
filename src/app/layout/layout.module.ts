@@ -9,6 +9,7 @@ import { LayoutPageRoutingModule } from './layout-routing.module';
 import { LayoutPage } from './layout.page';
 import { AddPhotoComponent } from '../gallery/add-photo/add-photo.component';
 import { GeolocationComponent } from '../geolocation/geolocation.component';
+import { BarComponent } from '../bar/bar.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import { GeolocationComponent } from '../geolocation/geolocation.component';
     IonicModule,
     LayoutPageRoutingModule
   ],
-  declarations: [LayoutPage, AddPhotoComponent, GeolocationComponent]
+  declarations: [LayoutPage, AddPhotoComponent, GeolocationComponent, BarComponent]
 })
 export class LayoutPageModule {}
