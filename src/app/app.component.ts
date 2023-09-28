@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { IonicModule, Platform } from '@ionic/angular';
+import { FcmService } from './services/ionic/service/fcm/fcm.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -19,7 +22,16 @@ export class AppComponent {
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
-  constructor() { }
+  constructor(
+    private platform: Platform,
+    private fcm: FcmService
+  ) {
+    this.platform.ready().then(() => {
+      this.fcm.initPush();
+    }).catch(e => {
+      console.log('error fcm: ', e);
+    });
+  }
 
   // Listen for the toggle check/uncheck to toggle the dark theme
   toggleChange(ev: any) {

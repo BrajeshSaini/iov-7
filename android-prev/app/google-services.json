@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "498793400507",
+    "firebase_url": "https://iot-app-9a6f8-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "iot-app-9a6f8",
+    "storage_bucket": "iot-app-9a6f8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:498793400507:android:41948bd4aafbbfe42e019e",
+        "android_client_info": {
+          "package_name": "com.thebrajeshsaini.textFCMApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "498793400507-d36ia9f9gnm8f2lqm4vsdpr5mtm17s4p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_P_OD4R60iA08K6o0ifgNvGX04D_ftLk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "498793400507-d36ia9f9gnm8f2lqm4vsdpr5mtm17s4p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

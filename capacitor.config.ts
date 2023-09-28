@@ -1,12 +1,18 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
+  appId: 'com.thebrajeshsaini.textFCMApp',
   appName: 'IOV7',
   webDir: 'www',
   server: {
     androidScheme: 'https'
+  },
+  plugins: {
+    PushNotifications: {
+      presentationOptions: ["badge", "sound", "alert"]
+    }
   }
+  
 };
 
 export default config;
